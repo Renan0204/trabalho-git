@@ -1,0 +1,12 @@
+name: Hello World on Push
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mostrar mensagem
+        run: echo "Hello world from GitHub Actions!"
