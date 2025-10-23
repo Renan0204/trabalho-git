@@ -1,0 +1,18 @@
+name: Push Info
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  info:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mostrar data e hora
+        run: |
+          echo "Data/hora (UTC): $(date -u '+%Y-%m-%d %H:%M:%S')"
+          echo "Data/hora (local): $(date '+%Y-%m-%d %H:%M:%S')"
+
+      - name: Mostrar usuário que fez o push
+        run: |
+          echo "Usuário que fez o push: $GITHUB_ACTOR"
