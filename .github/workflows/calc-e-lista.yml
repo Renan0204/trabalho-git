@@ -1,0 +1,25 @@
+name: Calcular e Listar Arquivos
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  calc-list:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Calcular 2+2
+        run: |
+          result=$((2+2))
+          echo "2 + 2 = $result"
+
+      - name: Listar arquivos
+        run: |
+          ls -la
+
+      - name: Contar arquivos HTML
+        run: |
+          count_html=$(find . -type f -name '*.html' | wc -l)
+          echo "Quantidade de arquivos .html: $count_html"
